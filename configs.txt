@@ -1,0 +1,35 @@
+# Run Configurations for APTuSMO
+
+# General Settings
+test_type=1  # 1 for network penetration test, 2 for domain penetration test
+target_ip_or_network=192.168.100.56  # Target IP address or network range
+network_type=1  # 1 for internal network scan
+hydra_scan_needed=1  # 1 if Hydra crack scan is needed, 0 if not needed
+username_wordlist=Elliot  # Path to the username wordlist
+password_wordlist=ER28-0652  # Path to the password wordlist
+services_to_test=ssh,ftp,http-form-post,telnet  # List of services to test
+network_interface=eth0  # Network interface for Wireshark
+domain_url=https://google-gruyere.appspot.com/534573053449819143269586484777699826645  # Domain for domain penetration test
+
+
+
+# API Keys and Paths
+
+# WPScan
+WPScan_API_token=api_token_here
+
+# Burp Suite
+Burp_API_key=api_token_here
+Burp_REST_API_script_path=/home/user/Desktop/burp-rest-api.sh
+Burp_REST_API_user_json_path=/home/user/Desktop/user.json
+
+# Shodan
+Shodan_API_key=api_token_here
+
+# Tenable
+Tenable_API_access_key=api_token_here
+Tenable_API_secret_key=api_token_here
+Tenable_owner_id=id_here
+
+# Tenable web app scans can be quick, basic, or standard in this program
+Tenable_web_scan_type=quick
