@@ -91,14 +91,14 @@ def get_scan_type():
 
 
 def main():
-    #cleanup_files()
+    cleanup_files()
     choice = input("Do you wish to do a network or a domain penetration test? For network, type 1, for web type 2: ")
     if choice == '1':
         target_network = get_network_range()
         scan_type = get_scan_type()
         hosts = perform_host_discovery(target_network)
         hid,uname,passlist,lservices = hydra_scan()
-        #net(target_network, scan_type, hosts)
+        net(target_network, scan_type, hosts)
         run_exploits(target_network, "net", hosts, "192.168.100.50", hid, uname,passlist,lservices)
         if scan_type == 1:
             generate_pdf_report('scan_reports', 'attack_reports', 'report.pdf', "internal")

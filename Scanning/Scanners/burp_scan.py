@@ -39,7 +39,6 @@ def run_burp_api():
         print(f"Exception: {e}")
 
 def burp_scanning(target, timeout=None):
-    print("AA")
     cmd = [
         'python3', 'Scanning/Scanners/Burp/burpa/burpa/_burpa.py',
         'scan', '--timeout='+str(timeout), target
@@ -73,11 +72,11 @@ def burp_scanning(target, timeout=None):
 def burp_start(target_url, timeout=None):
     # Start the Burp API in a separate thread
     print("Starting burp scan")
-    # burp_api_thread = threading.Thread(target=run_burp_api)
-    # burp_api_thread.start()
+    burp_api_thread = threading.Thread(target=run_burp_api)
+    burp_api_thread.start()
     
     # # Wait for 60 seconds to ensure the API is running
-    # time.sleep(60)
+    time.sleep(60)
     
     # Perform the scanning and report generation
     burp_scanning(target_url, timeout)
