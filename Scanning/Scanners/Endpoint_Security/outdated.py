@@ -3,9 +3,10 @@ import json
 
 def check_updates():
     try:
-        # Run 'sudo apt update' to refresh package list
-        subprocess.run(['sudo', 'apt', 'update'], check=True)
-        # Run 'apt list --upgradable' to list upgradable packages
+        # Run 'sudo apt update' to refresh package list, suppressing terminal output
+        subprocess.run(['sudo', 'apt', 'update'], check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        
+        # Run 'apt list --upgradable' to list upgradable packages, capturing the output
         result = subprocess.run(['apt', 'list', '--upgradable'], capture_output=True, text=True)
         
         # Process the output to show upgradable packages

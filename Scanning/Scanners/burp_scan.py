@@ -73,11 +73,11 @@ def burp_scanning(target, timeout=None):
 def burp_start(target_url, timeout=None):
     # Start the Burp API in a separate thread
     print("Starting burp scan")
-    burp_api_thread = threading.Thread(target=run_burp_api)
-    burp_api_thread.start()
+    # burp_api_thread = threading.Thread(target=run_burp_api)
+    # burp_api_thread.start()
     
-    # Wait for 60 seconds to ensure the API is running
-    time.sleep(60)
+    # # Wait for 60 seconds to ensure the API is running
+    # time.sleep(60)
     
     # Perform the scanning and report generation
     burp_scanning(target_url, timeout)
