@@ -5,9 +5,10 @@ APTuSMO is a powerful tool designed to automate penetration testing in complex n
 
 ## Table of Contents
 
+- [Acknowledgements](#acknowledgements)
 - [Modules](#modules)
 - [Features](#features)
-- [Programs used in APTuSMO](#programswithin)
+- [Programs Used in APTuSMO](#programs-used-in-aptusmo)
 - [Installation](#installation)
   - [Set Up a Virtual Environment](#set-up-a-virtual-environment)
   - [Install Requirements](#install-requirements)
@@ -17,10 +18,34 @@ APTuSMO is a powerful tool designed to automate penetration testing in complex n
     - [API Keys and Paths](#api-keys-and-paths)
     - [Config Example](#config-example)
   - [Starting APTuSMO](#starting-aptusmo)
-    - [Run the Main Script](#run-the-main-script)
-    - [Quick Start with the Run Script](#quick-start-with-the-run-script)
+    - [Option 1: Step-by-Step Interactive Setup](#option-1-step-by-step-interactive-setup)
+    - [Option 2: Quick Run with Predefined Settings](#option-2-quick-run-with-predefined-settings)
 - [License](#license)
-- [Thank you](#thank-you)
+- [Thank You](#thank-you)
+
+
+
+## Acknowledgements
+
+Before proceeding, I would like to extend my heartfelt gratitude to the GitHub projects and companies that have significantly contributed to the development of APTuSMO. These incredible tools and resources have been instrumental in making this program possible. While I have made some modifications to tailor them to APTuSMO, the original projects deserve full credit for their foundational work.
+
+### GitHub Projects
+- **[WAFNinja](https://github.com/khalilbijjou/WAFNinja)**: Thank you for providing an excellent tool for bypassing Web Application Firewalls (WAFs). Your project has been a cornerstone in the development of APTuSMO.
+- **[XSSStrike](https://github.com/s0md3v/XSStrike)**: Your powerful XSS vulnerability detection tool has greatly enhanced the capabilities of APTuSMO in web application security testing.
+- **[Burpa](https://github.com/tristanlatr/burpa)**: Thank you for the Burp Suite automation and integration tool, which has significantly improved the efficiency of web application security testing in APTuSMO.
+- **[Burp REST API](https://github.com/vmware/burp-rest-api)**: Special thanks for the Burp REST API, which has enabled seamless integration with Burp Suite for automated security testing.
+- **[Dirsearch](https://github.com/maurosoria/dirsearch)**: Your command-line tool for brute-forcing directories and files on web servers has been crucial for content discovery and security testing within APTuSMO.
+- **[SQLMap](https://github.com/sqlmapproject/sqlmap)**: Your open-source tool for detecting and exploiting SQL injection flaws has been essential for web application exploitation.
+
+### Companies and Their Products
+- **[Tenable](https://www.tenable.com)**: Thank you for your comprehensive vulnerability management solutions, which have been essential for thorough security assessments in APTuSMO.
+- **[PortSwigger](https://portswigger.net)**: Your exceptional Burp Suite toolset has provided a robust platform for web application security testing, enabling APTuSMO to deliver high-quality results.
+- **[Shodan](https://www.shodan.io)**: Your search engine for Internet-connected devices has been invaluable for information gathering and device discovery.
+- **[Nmap](https://nmap.org)**: Your network scanning and security auditing tool has been fundamental to the scanning capabilities of APTuSMO.
+- **[Wireshark](https://www.wireshark.org)**: Your network protocol analyzer has provided deep insights into network traffic analysis, enhancing APTuSMO's scanning module.
+- **[Rapid7](https://www.rapid7.com)**: Your comprehensive security solutions, especially the Metasploit Framework, have been critical for the exploitation phase of APTuSMO.
+
+Thank you to all the developers, contributors, and companies for your outstanding tools and resources. APTuSMO wouldn't exist without your innovation and dedication to the cybersecurity community. While I have mentioned several key contributors, there are many more who have played an important role in this project's success. To all those who aren't mentioned here, please know that your efforts are deeply appreciated by me and the entire cybersecurity community. Your work makes a significant difference, and for that, we are all extremely grateful.
 
 
 ## Modules
@@ -220,33 +245,49 @@ Tenable_web_scan_type=quick
 
 ### Starting APTuSMO
 
-To start using APTuSMO, follow these steps:
+To start using APTuSMO, you have two options: a step-by-step setup to see and answer each configuration question interactively, or a quick run using predefined settings from a configuration file. Choose the option that best suits your needs.
+
+#### Option 1: Step-by-Step Interactive Setup
+
+For those who prefer to see and answer each configuration question interactively, follow these steps:
 
 1. **Run the Main Script**:
 
-   If you are setting up for the first time or want to manually control the execution, use the following command:
+   Execute the main script to start the interactive setup. This will guide you through each configuration step, asking for your input as needed.
 
    ```bash
    python3 APTuSMO.py
    ```
 
-2. **Quick Start with the Run Script**
+This method provides a detailed and controlled setup process, allowing you to understand and customize each configuration parameter.
 
-If you are familiar with the program and prefer a quicker setup, you can use the `run.sh` bash script. This script automates the execution with your predefined settings from the configuration file.
+#### Option 2: Quick Run with Predefined Settings
 
-First, make the script executable:
+For those who are familiar with the program and prefer a faster setup using predefined settings, follow these steps:
 
-```bash
-chmod +x run.sh
-```
+1. **Prepare the Configuration File**:
 
-Then, run the script:
+   Ensure that all necessary configuration settings are correctly specified in the `configs.txt` file.
 
-```bash
-./run.sh
-```
+2. **Make the Run Script Executable**:
 
-This allows for both detailed control and quick setup based on your preference and familiarity with APTuSMO.
+   Grant execution permissions to the run script.
+
+   ```bash
+   chmod +x run.sh
+   ```
+
+4. **Run the Script**:
+
+   Execute the run script to automatically set up APTuSMO using the predefined settings from the configuration file.
+     
+    ```bash
+    ./run.sh
+    ```
+
+This method allows for a streamlined and efficient setup, leveraging your predefined configurations to quickly deploy APTuSMO.
+
+Choose the method that best fits your workflow and preferences to efficiently configure and run APTuSMO for your penetration testing needs.
 
 
 ## License
