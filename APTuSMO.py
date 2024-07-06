@@ -45,7 +45,7 @@ def zip_reports(variable_name):
 
 def get_domain():
     while True:
-        target_url = input("Put in your domain, e.g. (https://example.com/123): ")
+        target_url = input("Put in your domain, i.e. (mywebsite.com): ")
         if target_url == 'X':
             exit(1)
         if is_valid_url(target_url):
@@ -67,9 +67,9 @@ def hydra_scan():
     passlist=''
     lservices=[]
     if(hid==1):
-        uname=input("Do you have your own username wordlist, if you do enter the path of it, if not, press enter, the standard one will be used: ")
-        passlist=input("Do you have your own password wordlist, if you do enter the path of it, if not, press enter, the standard one will be used: ")
-        services=input("Do you have wished services to test, e.g. ftp, http... If you do enter them with commas in between, else, press enter: ")
+        uname=input("Do you have your own username wordlist or username, if you do enter the path of it or it, if not, press enter, the standard one will be used: ")
+        passlist=input("Do you have your own password wordlist or password, if you do enter the path of it or it, if not, press enter, the standard one will be used: ")
+        services=input("Do you have wished services to test, e.g. ftp, http... If you do enter them with commas in between, if not, press enter, the standard one will be used: ")
         if(len(uname)==0):
             uname='/usr/share/wordlists/metasploit/namelist.txt'
         if(len(passlist)==0):

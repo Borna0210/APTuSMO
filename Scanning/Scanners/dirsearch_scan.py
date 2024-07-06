@@ -6,6 +6,7 @@ def run_dirsearch(targets, extensions):
     # Define the output file paths
     output_file_path = 'scan_reports/dirsearch.txt'
     temp_output_file_path = 'scan_reports/temp_dirsearch.txt'
+    print("Starting Dirsearch")
 
     # Create the output directory if it doesn't exist
     os.makedirs(os.path.dirname(output_file_path), exist_ok=True)
@@ -45,6 +46,7 @@ def run_dirsearch(targets, extensions):
                     output_file.write("\n" + "="*80 + "\n")
                 # Remove the temporary file
                 os.remove(temp_output_file_path)
+                os.rmdir('reports')
             else:
                 output_file.write(f"Dirsearch did not create the temporary output file for {target}.")
         else:

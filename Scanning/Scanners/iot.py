@@ -14,6 +14,7 @@ def detect_iot_devices(network_range, output_file='scan_reports/iot_scan.txt'):
     Returns:
     - The output of the Nmap scan.
     """
+    
     # Check if network_range is a list and join it into a string of IP addresses
     if isinstance(network_range, list):
         network_range = ' '.join(network_range)
@@ -46,6 +47,7 @@ def detect_iot_devices(network_range, output_file='scan_reports/iot_scan.txt'):
     ]
   
     try:
+        print("Starting IoT detect scan")
         # Run the Nmap command
         result = subprocess.run(command, capture_output=True, text=True, check=True)
         result_upnp = subprocess.run(command_upnp, text=True, capture_output=True, check=True)
@@ -66,9 +68,8 @@ def detect_iot_devices(network_range, output_file='scan_reports/iot_scan.txt'):
             file.write("\n\nMAC Address Scan Results:\n")
             file.write(result_mac.stdout)
         
-        # Print the main Nmap scan result
-        print(result.stdout)
         
+        print("Finished IoT detect Scan")
         return result.stdout
         
     except subprocess.CalledProcessError as e:

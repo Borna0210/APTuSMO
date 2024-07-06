@@ -32,7 +32,7 @@ def run_web_app_scan(target,timeout="00:10:00",sc_type='quick'):
         status=web_app_scan_status(scan_id)
         if(status=='completed'):
             web_app_scan_results(scan_id)
-            print("Tenable web app scan is done, report is in the reports folder")
+            print("Tenable web app scan is done, report is in the scan_reports folder")
             break
         else:
             print("Scan still running")
@@ -47,7 +47,7 @@ def run_netscan(name,targets,timeout_min=10):
         status=netscan_status(str(scan_id))
         if(status=='completed' or status=='canceled'):
             netscan_details(str(scan_id))
-            print("Nessus scan is finished, the report is in the reports folder")
+            print("Nessus scan is finished, the report is in the scan_reports folder")
             break
         else:
             print("Scan is still running")
@@ -129,7 +129,7 @@ def web_app_scan_results(id):
     }
 
     response = requests.post(url, headers=headers)
-    output_file_path = "reports/nessus.json"
+    output_file_path = "scan_reports/nessus.json"
     with open(output_file_path, 'w') as file:
         file.write(response.text)
 
@@ -204,7 +204,7 @@ def netscan_details(id):
     resptext=resptext.get('vulnerabilities')
     resptext=','.join(map(str, resptext))
 
-    output_file_path = "reports/nessus.json"
+    output_file_path = "scan_reports/nessus.json"
     with open(output_file_path, 'w') as file:
         file.write(resptext)
 
