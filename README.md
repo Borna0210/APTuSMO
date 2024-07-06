@@ -1,7 +1,10 @@
 
 # APTuSMO: Automating Penetration Testing in Complex Network Environments
 
-APTuSMO is a powerful tool designed to automate penetration testing in complex network environments. This tool simplifies the process of identifying vulnerabilities and potential exploits across large networks, making it an essential asset for cybersecurity professionals.
+APTuSMO is a powerful tool designed to automate penetration testing in complex network environments. This tool simplifies the process of identifying vulnerabilities and potential exploits across large networks, making it an essential asset for cybersecurity professionals. 
+
+In this tool, it is required to have Burp Suite Professional and Tenable Vulnerability Management for optimal performance and the best results. If you do not have access to these tools, you can remove the related parts from the code. The program is designed to be flexible and can be modified according to your needs, as described in the sections below.
+
 
 ## Table of Contents
 
