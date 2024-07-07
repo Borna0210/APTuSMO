@@ -1,7 +1,7 @@
 import pyshark
 from scapy.all import wrpcap, Ether
 
-def capture_packets(interface='eth0', packet_count=100):
+def capture_packets(interface='eth0', packet_count=1000):
     """
     Capture packets on the specified network interface.
 
