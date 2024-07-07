@@ -45,7 +45,7 @@ def zip_reports(variable_name):
 
 def get_domain():
     while True:
-        target_url = input("Put in your domain, i.e. (mywebsite.com): ")
+        target_url = input("Put in your the link to your web application, e.g. (https://mywebsite.com/about): ")
         if target_url == 'X':
             exit(1)
         if is_valid_url(target_url):
