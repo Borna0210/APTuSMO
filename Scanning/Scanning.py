@@ -17,6 +17,7 @@ from Scanning.Scanners.whatweb import whatweb_scan
 from Scanning.Scanners.wpscan import run_wpscan
 from Scanning.Scanners.Helper.validip import is_valid_ip_or_cidr, is_valid_domain, is_valid_url
 from Scanning.Scanners.Helper.stringify import list_to_comma_separated_string
+from Scanning.Scanners.Helper.web_scan_type import get_web_scan_type
 from Scanning.Scanners.Wireshark.wireshark import wireshark_analysis
 from Scanning.InfoGather.InfoGather import gather_information
 from Scanning.InfoGather.tcptraceroute import run_tcptraceroute
@@ -89,9 +90,3 @@ def web(target_url):
     print("Finished the web app info gathering and scanning phase")
     
 
-def get_web_scan_type(file_path='configs.txt'):
-    with open(file_path, 'r') as file:
-        for line in file:
-            if line.startswith('Tenable_web_scan_type='):
-                return line.strip().split('=')[1]
-    raise ValueError('Tenable_web_scan_type not found in the config file')

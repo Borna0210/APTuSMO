@@ -33,3 +33,9 @@ colorama
 ntlm_auth
 pyparsing
 psycopg
+importlib_resources
+attrs
+python-dotenv
+filelock
+python-dateutil
+

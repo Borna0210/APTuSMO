@@ -124,11 +124,9 @@ class Burpa:
             file_path="configs.txt"
             with open(file_path, 'r') as file:
                 for line in file:
-                    if line.startswith('Burp_API_key='):
+                    if line.startswith("Burp_API_key="):
                         new_api_key=line.strip().split('=')[1]
-                    else:
-                        raise ValueError('Burp_API_key not found in the config file')
-        except ValueError:
+        except Exception:
             print("No Burp_API_key, your Burp test won't be able to run")
 
         api_url = ensure_scheme(os.getenv('BURP_API_URL') or api_url)
